@@ -5,7 +5,6 @@ exports.up = function(knex, Promise) {
         table.text("genre");
         table.text("description");
         table.text("cover");
-        table.text("email");
     });
 };
 
