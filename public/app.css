@@ -1,0 +1,16 @@
+.header{
+    display:flex;
+    padding: 10px;
+    align-items: center;
+    background-color: lightblue;
+    font-size: xx-large;
+}
+
+.footer{
+    background-color: lightblue;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    /* left:0; */
+}
