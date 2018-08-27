@@ -2,23 +2,29 @@
 const express = require("express");
 // const cors = require("cors");
 const queries = require("./queries");
-// const routes = require("./routes");
 // const methodOverride = require("method-override");
 const localport = 3005;
 const port = process.env.PORT || localport;
-const database = require("./database-connection");
+// const database = require("./database-connection");
 
 const app = express();
 
 // app.use(express.urlencoded({ extended: true }));
 // app.use(cors);
-// app.use(express.static('public'));
+app.use(express.static('public'));
 // app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 
-app.get("/", (request, response) => {
-    response.send("Server is working!! - Base route");
+// app.get("/", (request, response) => {
+//     queries
+//     .list()
+//     .then(record => response.send(record))
+//     // response.send("Server is working!! - Base route");
+//   });
+
+  app.get("/", (request, response) => {
+    response.render("index")
   });
 
   app.get("/books", (request, response) => {
@@ -61,7 +67,7 @@ app.get("/", (request, response) => {
     response.send("Server is working!! - Delete author route");
   });
 
-  
+
 
 
 
