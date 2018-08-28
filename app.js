@@ -16,13 +16,6 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 
 
-// app.get("/", (request, response) => {
-//     queries
-//     .list()
-//     .then(record => response.send(record))
-//     // response.send("Server is working!! - Base route");
-//   });
-
   app.get("/", (request, response) => {
     response.render("index")
   });
@@ -41,19 +34,6 @@ app.set("view engine", "ejs");
     .then(books => { console.log("books: ", books);
                      response.render( "bookview", { books: books, url:"bookview" }); })
   });
-
-  app.get("/books/new", (request, response) => {
-    response.send("Server is working!! - New book route");
-  });
-
-  app.get("/books/:book/edit", (request, response) => {
-    response.send("Server is working!! - Edit book route");
-  });
-
-  app.get("/books/:book/delete", (request, response) => {
-    response.send("Server is working!! - Delete book route");
-  });
-
   app.get("/authors", (request, response) => {
     queries
     .authors()
@@ -67,6 +47,24 @@ app.set("view engine", "ejs");
     .then(authors => { console.log("authors: ", authors);
                      response.render( "authorview", { authors: authors, url:"authorview" }); })
   });
+
+
+
+
+
+  app.get("/books/new", (request, response) => {
+    response.send("Server is working!! - New book route");
+  });
+
+  app.get("/books/:book/edit", (request, response) => {
+    response.send("Server is working!! - Edit book route");
+  });
+
+  app.get("/books/:book/delete", (request, response) => {
+    response.send("Server is working!! - Delete book route");
+  });
+
+
 
   app.get("/authors/new", (request, response) => {
     response.send("Server is working!! - New author route");
