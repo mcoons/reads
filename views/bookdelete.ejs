@@ -9,9 +9,9 @@ Total Books: <%= books.length %>
         <br><br><br>
         <p>We're sorry, there is no matching data.</p>
     <%  } %>
+    <form class="center" action="/books/<%=books[0].id%>?_method=DELETE" method="POST">
+        <input class="input buttonshadow" type="submit" value="Delete Book??" width="100">
+    </form>
 </div>
-<form class="" action="/books/<%=books[0].id%>?_method=DELETE" method="POST">
-    <input class="input buttonshadow" type="submit" value="Delete Book??" width="100">
-</form>
 <br><br>
 <% include ./partials/footer %>

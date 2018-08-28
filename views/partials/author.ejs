@@ -1,7 +1,10 @@
+
 <div class='author'>
     <img class='img-responsive image' src="<%= author.portrait %>" alt="Author Portrait" width="280">
     <div class='authorinfo'>
-        <h3><%= author.first_name %> <%= author.last_name %></h3>
+        <div><b><%= author.first_name %> <%= author.last_name %></b></div>
+        <a href='/authors/<%= author.id %>/delete'>Remove</a>
         <p><b>Biography: </b><%= author.biography %></p>
+        <p><b>Books: </b>List of books</p>
     </div>
 </div>

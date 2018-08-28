@@ -1,7 +1,7 @@
 <% include ./partials/header %>
 <br><br>
 <% include ./partials/topNav %>
-<p class="center"><b>Total Authors: <%= authors.length %></b></p>
+Total Authors: <%= authors.length %>
 <div class="flex-container">
         <% if (authors.length>0) { authors.forEach(author => { %>
                 <% include ./partials/author %>
@@ -9,6 +9,9 @@
         <br><br><br>
         <p>We're sorry, there is no matching data.</p>
     <%  } %>
+    <form class="center" action="/authors/<%=authors[0].id%>?_method=DELETE" method="POST">
+        <input class="input buttonshadow" type="submit" value="Delete Author??" width="100">
+    </form>
 </div>
 <br><br>
 <% include ./partials/footer %>

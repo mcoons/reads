@@ -3,6 +3,8 @@
     align-items: center;
     background-color: lightblue;
     font-size: xx-large;
+    text-shadow: 3px 3px black;
+    color: white;
 }
 
 .footer{
@@ -17,7 +19,8 @@
 .index{
     display:flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin: 20px;
+
 }
 
 .index img{
@@ -31,6 +34,9 @@
     flex-direction: column;
     font-size: xx-large;
     align-items: center;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px #888888 !important;
+
 }
 
 .top-nav{
@@ -46,6 +52,8 @@
     margin: 5px;
     padding: 5px;
     width: 150px;
+    box-shadow: 5px 5px 5px #888888 !important;
+
 }
 
 .top-nav-item div{
@@ -62,6 +70,8 @@
     padding: 10px;
     margin: 10px;
     border: 1px solid black;
+    box-shadow: 5px 5px 5px #888888 !important;
+
 }
 
 .book img, .author img{
@@ -82,15 +92,28 @@
     background-color: lightgreen;
 }
 
-.bookinfo a {
+.bookinfo a, .authorinfo a {
     display: inline;
     padding: 5px;
     background-color: white;
     border: 1px solid black;
     float: right;
+    box-shadow: 5px 5px 5px #888888 !important;
+
 }
 
-.bookinfo div{
+.bookinfo div, .authorinfo div{
     display:inline-block;
     font-size: x-large;
+}
+
+.buttonshadow{
+    box-shadow: 5px 5px 5px #888888 !important;
+   width: 90%;
+   margin: auto;
+}
+
+.center{
+    display: flex;
+    margin:auto;
 }

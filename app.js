@@ -28,6 +28,19 @@ app.set("view engine", "ejs");
     .then(books => { response.render( "bookview", { books: books, url:"bookview" }); })
   });
 
+    app.get("/books/:book/delete", (request, response) => {
+        queries
+        .readBook('id', request.params.book)
+        .then(books => { response.render( "bookdelete", { books: books, url:"bookview" }); })
+    });
+    
+    app.delete("/books/:id", (request, response, next) => {
+        queries
+        .deleteBook(request.params.id)
+        .then(response.redirect("/books"))
+        .catch(next);
+    });
+
 
 
   app.get("/authors", (request, response) => {      
@@ -43,6 +56,27 @@ app.set("view engine", "ejs");
   });
 
 
+  app.get("/authors/:author/delete", (request, response) => {
+    queries
+    .readAuthor('id', request.params.author)
+    .then(authors => { response.render( "authordelete", { authors: authors, url:"authorview" }); })
+});
+
+app.delete("/authors/:id", (request, response, next) => {
+    queries
+    .deleteAuthor(request.params.id)
+    .then(response.redirect("/authors"))
+    .catch(next);
+});
+
+
+
+
+
+
+
+
+
 
   app.get("/books/new", (request, response) => {
     response.send("Server is working!! - New book route");
@@ -52,21 +86,6 @@ app.set("view engine", "ejs");
     response.send("Server is working!! - Edit book route");
   });
 
-
-  app.get("/books/:book/delete", (request, response) => {
-    queries
-    .readBook('id', request.params.book)
-    .then(books => { response.render( "bookdelete", { books: books, url:"bookview" }); })
-  });
-
-
-  app.delete("/books/:id", (request, response, next) => {
-    queries
-    .deleteBook(request.params.id)
-    .then(response.redirect("/books"))
-    .catch(next);
-    
-  });
 
 
   app.get("/authors/new", (request, response) => {
