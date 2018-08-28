@@ -1,7 +1,7 @@
 <% include ./partials/header %>
 <br><br>
 <% include ./partials/topNav %>
-<p class="center"><b>Total Authors: <%= authors.length %></b></p>
+<div class="totals"><strong>Total Authors: <%= authors.length %></strong></div>
 <div class="flex-container">
         <% if (authors.length>0) { authors.forEach(author => { %>
                 <% include ./partials/author %>
