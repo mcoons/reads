@@ -31,7 +31,6 @@ app.set("view engine", "ejs");
   app.get("/books", (request, response) => {
     queries
     .books()
-    // .then(record => response.send(record))
     .then(books => { console.log("books: ", books);
                      response.render( "bookview", { books: books, url:"bookview" }); })
   });
@@ -56,11 +55,17 @@ app.set("view engine", "ejs");
   });
 
   app.get("/authors", (request, response) => {
-    response.send("Server is working!! - Base authors route");
-  });
+    queries
+    .authors()
+    .then(authors => { console.log("authors: ", authors);
+    response.render( "authorview", { authors: authors, url:"authorview" }); })
+});
 
   app.get("/authors/:author", (request, response) => {
-    response.send("Server is working!! - Specific author route");
+    queries
+    .readAuthor('id', request.params.author)
+    .then(authors => { console.log("authors: ", authors);
+                     response.render( "authorview", { authors: authors, url:"authorview" }); })
   });
 
   app.get("/authors/new", (request, response) => {

@@ -53,19 +53,22 @@ display:flex;
     margin-left: 10px;
 }
 
-.book{
+.book, .author{
     display:flex;
     padding: 10px;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     margin: 10px;
+    border: 1px solid black;
 }
 
-.book img{
+.book img, .author img{
     height: 200px;
     width: auto;
 }
 
-.book div{
+.book div, .author div{
     padding: 10px;
-    font-size: large;
+    /* font-size: large; */
+    background-color: lightgray;
+
 }

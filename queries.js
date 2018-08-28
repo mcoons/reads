@@ -38,6 +38,12 @@ readBook(attribute, value) {
     .where(attribute, value);
 },
 
+readAuthor(attribute, value) {
+    return database("author")
+    .select()
+    .where(attribute, value);
+},
+
 authorByBook(book_id){
     return database("book_author")
     .join('author', 'author.id', '=', 'book_author.author_id')

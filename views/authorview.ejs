@@ -1,10 +1,10 @@
 <% include ./partials/header %>
 <br><br>
 <% include ./partials/topNav %>
-Total Books: <%= books.length %>
+Total Authors: <%= authors.length %>
 <div class="flex-container">
-        <% if (books.length>0) { books.forEach(book => { %>
-                <% include ./partials/book %>
+        <% if (authors.length>0) { authors.forEach(author => { %>
+                <% include ./partials/author %>
     <% })} else { %>
         <br><br><br>
         <p>We're sorry, there is no matching data.</p>
