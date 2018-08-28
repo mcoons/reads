@@ -2,11 +2,6 @@ const database = require("./database-connection");
 
 module.exports = {
 
-//   list() {
-//     return database("book")
-//       .select();
-//   }
-
 list(){
     return database("book_author")
     .join('book', 'book.id', '=', 'book_author.book_id')
@@ -24,6 +19,7 @@ list(){
 },
 
 
+
 books(){
     return database("book")
 },
@@ -31,6 +27,8 @@ books(){
 authors(){
     return database("author")
 },
+
+
 
 readBook(attribute, value) {
     return database("book")
@@ -43,6 +41,8 @@ readAuthor(attribute, value) {
     .select()
     .where(attribute, value);
 },
+
+
 
 authorByBook(book_id){
     return database("book_author")
@@ -68,8 +68,19 @@ bookByAuthor(author_id){
             'author.biography',
             'author.portrait')
     .where('book_author.book_id',book_id)
-}
+},
 
+deleteBook(id) {
+    return database("book")
+        .delete()
+        .where("id", id);
+},
+
+deleteAuthor(id) {
+    return database("author")
+        .delete()
+        .where("id", id);
+}
 
 
 

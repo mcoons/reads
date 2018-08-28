@@ -1,7 +1,11 @@
+
+
 <div class='book'>
     <img class='img-responsive image' src="<%= book.cover %>" alt="Book Cover" width="280">
     <div class='bookinfo'>
-        <h3><%= book.title %></h3>
+        <div><b><%= book.title %></b></div>
+        <a href='/books/<%= book.id %>/delete'>Remove</a>
+        <p><b>By: </b>Authors List </p>        
         <p><b>Genre: </b><%= book.genre %></p>
         <p><b>Description: </b><%= book.description %></p>
     </div>

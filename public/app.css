@@ -34,13 +34,12 @@
 }
 
 .top-nav{
-color:red;
-display:flex;
+    color:red;
+    display:flex;
 }
 
 .top-nav-item{
     display:flex;
-    /* flex-direction: column; */
     font-size: large;
     align-items: center;
     border: solid black 1px;
@@ -54,10 +53,13 @@ display:flex;
     margin-left: 10px;
 }
 
+.top-nav-item a{
+    width: 100%;
+}
+
 .book, .author{
     display:flex;
     padding: 10px;
-    /* background-color: lightgray; */
     margin: 10px;
     border: 1px solid black;
 }
@@ -69,11 +71,26 @@ display:flex;
 
 .book div, .author div{
     padding: 10px;
-    /* font-size: large; */
     background-color: lightgray;
-
 }
 
 .bookinfo, .authorinfo{
     width: 100%;
+}
+
+.active{
+    background-color: lightgreen;
+}
+
+.bookinfo a {
+    display: inline;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid black;
+    float: right;
+}
+
+.bookinfo div{
+    display:inline-block;
+    font-size: x-large;
 }
