@@ -21,14 +21,14 @@ list(){
 
 
 books(){
-    return database("book")
+    let retval = database("book")
+    // console.log(retval);
+    return retval;;
 },
 
 authors(){
-    return database("author")
+    return database("author");
 },
-
-
 
 readBook(attribute, value) {
     return database("book")
@@ -49,7 +49,6 @@ authorByBook(book_id){
     .join('author', 'author.id', '=', 'book_author.author_id')
     .select('book_author.book_id', 
             'book_author.author_id',
-            'book.title',
             'author.first_name',
             'author.last_name',
             'author.biography',
@@ -62,13 +61,10 @@ bookByAuthor(author_id){
     .join('book', 'book.id', '=', 'book_author.book_id')
     .select('book_author.book_id', 
             'book_author.author_id',
-            'book.title',
-            'author.first_name',
-            'author.last_name',
-            'author.biography',
-            'author.portrait')
-    .where('book_author.book_id',book_id)
+            'book.title')
+    .where('book_author.author_id',author_id)
 },
+
 
 deleteBook(id) {
     return database("book")

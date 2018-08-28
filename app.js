@@ -19,7 +19,10 @@ app.set("view engine", "ejs");
   app.get("/books", (request, response) => {
     queries
     .books()
-    .then(books => { response.render( "bookview", { books: books, url:"bookview", authors: queries.authors().author }); })
+    .then(books => { 
+        console.log(queries.books());
+        response.render( "bookview", { books: books, url:"bookview", authors: queries.authors().author }); 
+    })
   });
 
   app.get("/books/:book", (request, response) => {
@@ -94,10 +97,6 @@ app.delete("/authors/:id", (request, response, next) => {
 
   app.get("/authors/:author/edit", (request, response) => {
     response.send("Server is working!! - Edit author route");
-  });
-
-  app.get("/authors/:author/delete", (request, response) => {
-    response.send("Server is working!! - Delete author route");
   });
 
 
