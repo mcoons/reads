@@ -26,14 +26,21 @@ app.set("view engine", "ejs");
   app.get("/", (request, response) => {
     response.render("index")
   });
-  
+
 
   app.get("/books", (request, response) => {
-    response.send("Server is working!! - Books route");
+    queries
+    .books()
+    // .then(record => response.send(record))
+    .then(books => { console.log("books: ", books);
+                     response.render( "bookview", { books: books, url:"bookview" }); })
   });
 
   app.get("/books/:book", (request, response) => {
-    response.send("Server is working!! - Specific Book route");
+    queries
+    .readBook('id', request.params.book)
+    .then(books => { console.log("books: ", books);
+                     response.render( "bookview", { books: books, url:"bookview" }); })
   });
 
   app.get("/books/new", (request, response) => {

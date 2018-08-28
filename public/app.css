@@ -1,6 +1,5 @@
 .header{
     display:flex;
-    padding: 10px;
     align-items: center;
     background-color: lightblue;
     font-size: xx-large;
@@ -18,7 +17,9 @@
 .index{
     display:flex;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
+
 .index img{
     width: 100%;
     height: auto;
@@ -30,4 +31,41 @@
     flex-direction: column;
     font-size: xx-large;
     align-items: center;
+}
+
+.top-nav{
+color:red;
+display:flex;
+}
+
+.top-nav-item{
+    display:flex;
+    /* flex-direction: column; */
+    font-size: large;
+    align-items: center;
+    border: solid black 1px;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+}
+
+.top-nav-item div{
+    margin-left: 10px;
+}
+
+.book{
+    display:flex;
+    padding: 10px;
+    background-color: lightgray;
+    margin: 10px;
+}
+
+.book img{
+    height: 200px;
+    width: auto;
+}
+
+.book div{
+    padding: 10px;
+    font-size: large;
 }
