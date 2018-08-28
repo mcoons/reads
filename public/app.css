@@ -12,5 +12,22 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-    /* left:0; */
+    text-align: center;
+}
+
+.index{
+    display:flex;
+    justify-content: space-around;
+}
+.index img{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.index-books, .index-authors{
+    display:flex;
+    flex-direction: column;
+    font-size: xx-large;
+    align-items: center;
 }
